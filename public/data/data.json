@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "resources": {
+    "rows": [
+      { "id": "a", "name": "Cabin 1", "role": "Sleeps 8", "maxPeople": 8 },
+      { "id": "b", "name": "Cabin 2", "role": "Sleeps 6", "maxPeople": 6 },
+      { "id": "c", "name": "The Lodge", "role": "Sleeps 6", "maxPeople": 6 },
+      {
+        "id": "f",
+        "name": "The Royal Retreat",
+        "role": "Sleeps 4",
+        "maxPeople": 4
+      },
+      {
+        "id": "g",
+        "name": "The Tree Nest",
+        "role": "Sleeps 2",
+        "maxPeople": 2
+      },
+      {
+        "id": "d",
+        "name": "The Luxury Tent",
+        "role": "Sleeps 2",
+        "maxPeople": 2
+      },
+      {
+        "id": "e",
+        "name": "The Emperor Suite",
+        "role": "Sleeps 4",
+        "maxPeople": 4
+      },
+      {
+        "id": "h",
+        "name": "The Emperor Penguin Suite",
+        "role": "Sleeps 6",
+        "maxPeople": 6
+      }
+    ]
+  },
+  "events": {
+    "rows": [
+      {
+        "id": 1,
+        "resourceId": "a",
+        "name": "Mr Woods",
+        "people": 4,
+        "price": 200,
+        "startDate": "2022-09-08",
+        "endDate": "2022-09-11",
+        "eventType": "Booking",
+        "eventColor": "blue",
+        "iconCls": "b-fa b-fa-user"
+      },
+      {
+        "id": 2,
+        "resourceId": "b",
+        "name": "Ms Davis",
+        "people": 3,
+        "price": 300,
+        "startDate": "2022-09-11",
+        "endDate": "2022-09-14",
+        "eventType": "Booking",
+        "eventColor": "green",
+        "iconCls": "b-fa b-fa-user"
+      }
+    ]
+  },
+  "timeRanges": {
+    "rows": [
+      {
+        "name": "Conference",
+        "startDate": "2022-09-15",
+        "endDate": "2022-09-17",
+        "cls": "striped"
+      }
+    ]
+  }
+}
