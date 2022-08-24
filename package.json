@@ -8,23 +8,25 @@
     "sass": "sass --watch app/:app/"
   },
   "dependencies": {
-    "@remix-run/node": "^1.6.8",
-    "@remix-run/react": "^1.6.8",
-    "@remix-run/serve": "^1.6.8",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "remix": "^1.6.8",
-    "remix-utils": "^3.3.0"
+    "@bryntum/scheduler": "npm:@bryntum/scheduler-trial@5.1.1",
+    "@bryntum/scheduler-react": "5.1.1",
+    "@remix-run/node": "1.6.8",
+    "@remix-run/react": "1.6.8",
+    "@remix-run/serve": "1.6.8",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "remix": "1.6.8",
+    "remix-utils": "3.3.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.6.8",
-    "@remix-run/eslint-config": "^1.6.8",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
-    "concurrently": "^7.3.0",
-    "eslint": "^8.20.0",
-    "sass": "^1.54.5",
-    "typescript": "^4.7.4"
+    "@remix-run/dev": "1.6.8",
+    "@remix-run/eslint-config": "1.6.8",
+    "@types/react": "18.0.15",
+    "@types/react-dom": "18.0.6",
+    "concurrently": "7.3.0",
+    "eslint": "8.20.0",
+    "sass": "1.54.5",
+    "typescript": "4.7.4"
   },
   "engines": {
     "node": ">=14"
