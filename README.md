@@ -1,5 +1,6 @@
-# Welcome to Remix!
+# Tutorial: Create a property management scheduler with Bryntum and Remix
 
+- [Using Bryntum Scheduler with React - Docs](https://www.bryntum.com/docs/scheduler/guide/Scheduler/integration/react/guide)
 - [Remix Docs](https://remix.run/docs)
 
 ## Development
