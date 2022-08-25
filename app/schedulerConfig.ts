@@ -54,6 +54,19 @@ const schedulerConfig: BryntumSchedulerProps = {
     },
   },
 
+  listeners: {
+    beforeEventEditShow({
+      eventEdit,
+      resourceRecord,
+    }: {
+      eventEdit: any;
+      resourceRecord: any;
+    }) {
+      // modify editor field here
+      eventEdit.people.max = resourceRecord.data.maxPeople;
+    },
+  },
+
   columns: [
     {
       type: "resourceInfo",
