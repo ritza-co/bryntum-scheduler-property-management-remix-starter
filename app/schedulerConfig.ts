@@ -1,3 +1,4 @@
+import type { EventModel, EventModelConfig } from "@bryntum/scheduler";
 import { StringHelper } from "@bryntum/scheduler";
 import type { BryntumSchedulerProps } from "@bryntum/scheduler-react";
 import { dayDiff } from "./helpers/helperFunctions";
@@ -82,6 +83,19 @@ const schedulerConfig: BryntumSchedulerProps = {
     return StringHelper.xss`${eventRecord.name}, ${
       eventRecord.people
     } ppl, ${days} day${days === 1 ? "" : "s"}`;
+  },
+
+  summaryFeature: {
+    renderer: ({
+      events: bookings,
+    }: {
+      events: EventModel[] | object[] | Partial<EventModelConfig>[];
+    }) => {
+      var result = "";
+      result = bookings.length.toString();
+      result = result || "";
+      return StringHelper.xss`${result}`;
+    },
   },
 
   columns: [
