@@ -1,4 +1,4 @@
-# Tutorial: Create a property management scheduler with Bryntum and Remix
+# Tutorial: Create a property management scheduler with Bryntum and Remix using TypeScript
 
 - This is the starter code for the following [tutorial](#)
 - the "complete-scheduler" branch contains the code for the completed tutorial
