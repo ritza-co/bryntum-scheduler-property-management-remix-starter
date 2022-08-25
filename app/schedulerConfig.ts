@@ -1,4 +1,6 @@
+import { StringHelper } from "@bryntum/scheduler";
 import type { BryntumSchedulerProps } from "@bryntum/scheduler-react";
+import { dayDiff } from "./helpers/helperFunctions";
 
 const schedulerConfig: BryntumSchedulerProps = {
   resourceImagePath: "/accommodation/",
@@ -65,6 +67,21 @@ const schedulerConfig: BryntumSchedulerProps = {
       // modify editor field here
       eventEdit.people.max = resourceRecord.data.maxPeople;
     },
+  },
+
+  eventRenderer({
+    eventRecord,
+    renderData,
+  }: {
+    eventRecord: any;
+    renderData: any;
+  }) {
+    renderData.style = "color:white"; // You can use inline styles too.
+
+    const days = dayDiff(eventRecord.startDate, eventRecord.endDate);
+    return StringHelper.xss`${eventRecord.name}, ${
+      eventRecord.people
+    } ppl, ${days} day${days === 1 ? "" : "s"}`;
   },
 
   columns: [
