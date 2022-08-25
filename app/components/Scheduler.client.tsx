@@ -38,6 +38,11 @@ export default function SchedulerApp() {
     });
   }, []);
 
+  const removeEvent = useCallback(() => {
+    selectedEvent?.remove();
+    setSelectedEvent(null);
+  }, [selectedEvent]);
+
   return (
     <>
       <div className="demo-toolbar align-right">
@@ -52,6 +57,12 @@ export default function SchedulerApp() {
           );
         })()}
         <BryntumButton icon="b-fa-plus" cls="b-green" onClick={addEvent} />
+        <BryntumButton
+          icon="b-fa-trash"
+          cls="b-red"
+          onClick={removeEvent}
+          disabled={!selectedEvent}
+        />
       </div>
       <BryntumScheduler
         ref={schedulerRef}
