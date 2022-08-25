@@ -30,6 +30,30 @@ const schedulerConfig: BryntumSchedulerProps = {
     showCurrentTimeLine: true,
   },
 
+  eventEditFeature: {
+    items: {
+      // Merged with provided config of the resource field
+      resourceField: {
+        label: "Property",
+      },
+      people: {
+        type: "number",
+        // name will be used to link to a field in the event record when loading and saving in the editor
+        name: "people",
+        label: "Number of guests",
+        min: 1,
+        required: true,
+      },
+      price: {
+        type: "number",
+        name: "price",
+        label: "Price for total stay (USD)",
+        min: 1,
+        required: true,
+      },
+    },
+  },
+
   columns: [
     {
       type: "resourceInfo",
