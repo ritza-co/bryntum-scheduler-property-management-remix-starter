@@ -1,5 +1,9 @@
 import { useCallback, useRef, useState } from "react";
-import { BryntumButton, BryntumScheduler } from "@bryntum/scheduler-react";
+import {
+  BryntumButton,
+  BryntumNumberField,
+  BryntumScheduler,
+} from "@bryntum/scheduler-react";
 import type { Scheduler, EventModel } from "@bryntum/scheduler";
 import { schedulerConfig } from "~/schedulerConfig";
 import { Toast } from "@bryntum/scheduler";
@@ -8,6 +12,7 @@ export default function SchedulerApp() {
   const schedulerRef = useRef<BryntumScheduler>(null);
   const schedulerInstance = () => schedulerRef.current?.instance as Scheduler;
   const [selectedEvent, setSelectedEvent] = useState<EventModel | null>(null);
+  const [barMargin, setBarMargin] = useState(5);
 
   const onEventSelectionChange = useCallback(
     ({ selected }: { selected: EventModel[] }) => {
@@ -56,6 +61,13 @@ export default function SchedulerApp() {
             ""
           );
         })()}
+        <BryntumNumberField
+          label="Bar margin"
+          min={0}
+          max={15}
+          value={barMargin}
+          onChange={({ value }: { value: number }) => setBarMargin(value)}
+        />
         <BryntumButton icon="b-fa-plus" cls="b-green" onClick={addEvent} />
         <BryntumButton
           icon="b-fa-trash"
@@ -68,6 +80,7 @@ export default function SchedulerApp() {
         ref={schedulerRef}
         {...schedulerConfig}
         onEventSelectionChange={onEventSelectionChange}
+        barMargin={barMargin}
       />
     </>
   );
