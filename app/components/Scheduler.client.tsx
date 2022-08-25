@@ -1,12 +1,20 @@
-import { useCallback, useRef } from "react";
+import { useCallback, useRef, useState } from "react";
 import { BryntumButton, BryntumScheduler } from "@bryntum/scheduler-react";
-import type { Scheduler } from "@bryntum/scheduler";
+import type { Scheduler, EventModel } from "@bryntum/scheduler";
 import { schedulerConfig } from "~/schedulerConfig";
 import { Toast } from "@bryntum/scheduler";
 
 export default function SchedulerApp() {
   const schedulerRef = useRef<BryntumScheduler>(null);
   const schedulerInstance = () => schedulerRef.current?.instance as Scheduler;
+  const [selectedEvent, setSelectedEvent] = useState<EventModel | null>(null);
+
+  const onEventSelectionChange = useCallback(
+    ({ selected }: { selected: EventModel[] }) => {
+      setSelectedEvent(selected.length > 0 ? selected[0] : null);
+    },
+    []
+  );
 
   const addEvent = useCallback(() => {
     const scheduler = schedulerInstance();
@@ -33,9 +41,23 @@ export default function SchedulerApp() {
   return (
     <>
       <div className="demo-toolbar align-right">
+        {(() => {
+          return selectedEvent ? (
+            <div className="selected-event">
+              <span>Selected reservation: </span>
+              <span>{selectedEvent.name}</span>
+            </div>
+          ) : (
+            ""
+          );
+        })()}
         <BryntumButton icon="b-fa-plus" cls="b-green" onClick={addEvent} />
       </div>
-      <BryntumScheduler ref={schedulerRef} {...schedulerConfig} />
+      <BryntumScheduler
+        ref={schedulerRef}
+        {...schedulerConfig}
+        onEventSelectionChange={onEventSelectionChange}
+      />
     </>
   );
 }
